@@ -29,6 +29,7 @@ module.exports = {
 ## Usage
 
 ```ts
+import '@reactivers/feedbacky-button/dist/index.css'
 <FeedbackProvider url={"https://my.backend.com/api/feedback/create"}>
 ...
     <Feedback
