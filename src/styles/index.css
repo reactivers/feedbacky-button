@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.feedbacky-modal-in {
+    transform: scale(0);
+    animation: show-modal 0.2s linear forwards;
+}
+
+@keyframes show-modal {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.feedbacky-modal-out {
+    transform: scale(1);
+    animation: hide-modal 0.2s linear forwards;
+}
+
+@keyframes hide-modal {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(0);
+    }
+}
+
+.backdrop-fade-in {
+    background-color: rgba(0, 0, 0, 0);
+    animation: show-backdrop 0.2s linear forwards;
+}
+
+@keyframes show-backdrop {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.backdrop-fade-out {
+    background-color: rgba(0, 0, 0, 1);
+    animation: hide-backdrop 0.2s linear forwards;
+}
+
+@keyframes hide-backdrop {
+    from {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    to {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
