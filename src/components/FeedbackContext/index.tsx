@@ -19,6 +19,7 @@ const FeedbackProvider: FC<PropsWithChildren<IFeedbackProvider>> = ({
             const response = await fetch(url, {
                 method: "POST",
                 headers: {
+                    "Authorization": "Bearer null",
                     "Content-Type": "application/json",
                 },
                 body
