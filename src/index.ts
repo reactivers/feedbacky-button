@@ -16,5 +16,5 @@ export { default as FeedbackModalContainer } from "./components/FeedbackModalCon
 export { default as FeedbackModalContainerContext } from "./components/FeedbackModalContainer/context";
 export { default as useFeedbackModal } from "./components/FeedbackModalContainer/hook";
 export { default as FeedbackModalContainerProvider } from "./components/FeedbackModalContainer/provider";
-export { IFeedbackModalContainerContext, IFeedbackModalContainerContextProps } from "./components/FeedbackModalContainer/types";
+export { IFeedbackModalContainerContext, IFeedbackModalContainerContextProps, IFeedbackModalContainerProps } from "./components/FeedbackModalContainer/types";
 
