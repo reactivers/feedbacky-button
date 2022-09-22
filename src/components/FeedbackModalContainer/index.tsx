@@ -1,11 +1,12 @@
 import classNames from "classnames";
-import { IFeedbackModal } from "components/FeedbackModal/types";
 import { FC, MouseEvent, PropsWithChildren, useEffect, useState } from "react";
 import FeedbackModalContainerProvider from "./provider";
+import { IFeedbackModalContainerProps } from "./types";
 
-const FeedbackModal: FC<PropsWithChildren<IFeedbackModal>> = ({
+const FeedbackModalContainer: FC<PropsWithChildren<IFeedbackModalContainerProps>> = ({
     show,
     onClose,
+    showModal,
     children
 }) => {
     const [closing, setClosing] = useState(false);
@@ -37,7 +38,11 @@ const FeedbackModal: FC<PropsWithChildren<IFeedbackModal>> = ({
                     "feedbacky-modal-in": !closing,
                     "feedbacky-modal-out": closing,
                 })}>
-                <FeedbackModalContainerProvider onClose={startClose}>
+                <FeedbackModalContainerProvider
+                    closeModal={startClose}
+                    showModal={showModal}
+                    show={show}
+                >
                     {children}
                 </FeedbackModalContainerProvider>
             </div>
@@ -45,4 +50,4 @@ const FeedbackModal: FC<PropsWithChildren<IFeedbackModal>> = ({
     )
 }
 
-export default FeedbackModal;
+export default FeedbackModalContainer;

@@ -1,16 +1,24 @@
 import FeedbackModalContainer from "components/FeedbackModalContainer";
-import { FC, useState } from "react";
+import { FC, useCallback, useState } from "react";
 import { IFeedbackCore } from "./types";
 
 const FeedbackCore: FC<IFeedbackCore> = (props: IFeedbackCore) => {
-    const [showModal, setShowModal] = useState(false);
+    const [show, setShow] = useState(false);
+
+    const showModal = useCallback(() => {
+        setShow(true)
+    }, [])
+
+    const hideModal = useCallback(() => {
+        setShow(false)
+    }, [])
 
     const onFeedbackButtonClick = () => {
-        setShowModal(true)
+        showModal()
     }
 
     const onFeedbackModalClose = () => {
-        setShowModal(false)
+        hideModal()
     }
 
     return (
@@ -20,10 +28,10 @@ const FeedbackCore: FC<IFeedbackCore> = (props: IFeedbackCore) => {
                 onClick={onFeedbackButtonClick}
             />
             <FeedbackModalContainer
-                show={showModal}
+                show={show}
+                showModal={showModal}
                 onClose={onFeedbackModalClose}>
-                <props.feedbackModal {...props.feedbackModalProps}
-                    show={showModal} />
+                <props.feedbackModal {...props.feedbackModalProps} />
             </FeedbackModalContainer>
         </>
     )

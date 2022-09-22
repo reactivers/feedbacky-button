@@ -1,9 +1,16 @@
 interface IFeedbackModalContainerContext {
-    onClose: () => void;
+    show: boolean;
+    closeModal: () => void;
+    showModal: () => void;
 }
 
-interface IFeedbackModalContainerContextProps {
-    onClose: () => void;
+interface IFeedbackModalContainerContextProps extends IFeedbackModalContainerContext {
 }
 
-export type { IFeedbackModalContainerContext, IFeedbackModalContainerContextProps };
+interface IFeedbackModalContainerProps {
+    show: boolean;
+    onClose: () => void;
+    showModal: () => void;
+}
+
+export type { IFeedbackModalContainerContext, IFeedbackModalContainerContextProps, IFeedbackModalContainerProps };

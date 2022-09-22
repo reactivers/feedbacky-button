@@ -4,11 +4,15 @@ import { IFeedbackModalContainerContextProps } from "./types"
 
 const FeedbackModalContainerProvider: FC<PropsWithChildren<IFeedbackModalContainerContextProps>> = ({
     children,
-    onClose
+    closeModal,
+    showModal,
+    show
 }) => {
     return (
         <FeedbackModalContainerContext.Provider value={{
-            onClose
+            closeModal,
+            showModal,
+            show
         }}>
             {children}
         </FeedbackModalContainerContext.Provider>

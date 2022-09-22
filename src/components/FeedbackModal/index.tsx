@@ -10,7 +10,7 @@ const FeedbackModal: FC<IFeedbackModal> = ({
     title,
     onSend,
 }) => {
-    const { onClose } = useFeedbackModal();
+    const { closeModal } = useFeedbackModal();
     const [showSuccessFeedback, setShowSuccessFeedback] = useState(false);
     const { sendFeedback } = useFeedback();
     const [value, setValue] = useState("");
@@ -34,7 +34,7 @@ const FeedbackModal: FC<IFeedbackModal> = ({
         <div className="w-[320px] sm:w-[600px] min-h-[200px] w-full bg-white rounded-lg p-4">
             <div className="flex items-start justify-between w-full">
                 <div></div>
-                <div className="mt-3 text-xl cursor-pointer" onClick={onClose}>
+                <div className="mt-3 text-xl cursor-pointer" onClick={closeModal}>
                     <AiOutlineClose />
                 </div>
             </div>

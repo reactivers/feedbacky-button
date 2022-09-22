@@ -3,12 +3,12 @@ import { IFeedbackModal } from "components/FeedbackModal/types";
 import { FC } from "react";
 
 declare type IFeedbackButtonProps = Omit<IFeedbackButton, "onClick"> | {};
-declare type IFeedbackModalProps = Omit<IFeedbackModal, "show" | "onClose"> | {};
+declare type IFeedbackModalProps = IFeedbackModal | {};
 
 interface IFeedbackCore {
     feedbackButton: FC<IFeedbackButton>;
     feedbackButtonProps?: IFeedbackButtonProps;
-    feedbackModal: FC<Omit<IFeedbackModal, "onClose">>;
+    feedbackModal: FC<IFeedbackModal>;
     feedbackModalProps?: IFeedbackModalProps;
 }
 
