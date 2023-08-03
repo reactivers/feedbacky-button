@@ -1,7 +1,9 @@
+import { IFeedbackParams } from "components/FeedbackContext/types";
+
 interface IFeedbackModal {
-    title?: string;
-    sendButtonTitle?: string;
-    onSend?: (value: string) => void;
+  title?: string;
+  sendButtonTitle?: string;
+  onSend?: (value: IFeedbackParams) => void;
 }
 
 export type { IFeedbackModal };

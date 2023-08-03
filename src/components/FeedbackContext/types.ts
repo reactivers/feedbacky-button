@@ -1,19 +1,25 @@
 interface IResponse {
-    success: boolean;
-    result: any;
+  success: boolean;
+  result: any;
 }
 
 interface IFeedbackParams {
-    feedback: string;
+  username?: string;
+  name?: string;
+  feedback: string;
 }
 
 interface IFeedbackProvider {
-    url: string;
-    username?: string;
+  url: string;
+  showEmailField?: boolean;
+  showNameField?: boolean;
+  username?: string;
 }
 
 interface IFeedbackContext {
-    sendFeedback: (params: IFeedbackParams) => Promise<IResponse>
+  showEmailField?: boolean;
+  showNameField?: boolean;
+  sendFeedback: (params: IFeedbackParams) => Promise<IResponse>;
 }
 
 export type { IFeedbackParams, IFeedbackContext, IFeedbackProvider, IResponse };
