@@ -26,10 +26,13 @@ const FeedbackModalContainer: FC<
 
   return (
     <div
-      className={classNames("fixed inset-0 flex items-center justify-center", {
-        "backdrop-fade-in": !closing,
-        "backdrop-fade-out": closing,
-      })}
+      className={classNames(
+        "fixed inset-0 flex items-center justify-center z-[100]",
+        {
+          "backdrop-fade-in": !closing,
+          "backdrop-fade-out": closing,
+        }
+      )}
       onClick={startClose}
     >
       <div
