@@ -7,11 +7,13 @@ import { IFeedback } from "./types";
 const Feedback: FC<IFeedback> = ({
   feedbackButtonProps,
   feedbackModalProps,
+  feedbackModalContainerProps,
 }) => {
   return (
     <FeedbackCore
       feedbackButton={FeedbackButton}
       feedbackModal={FeedbackModal}
+      feedbackModalContainerProps={feedbackModalContainerProps}
       feedbackButtonProps={feedbackButtonProps}
       feedbackModalProps={feedbackModalProps}
     />

@@ -5,7 +5,15 @@ import { IFeedbackModalContainerProps } from "./types";
 
 const FeedbackModalContainer: FC<
   PropsWithChildren<IFeedbackModalContainerProps>
-> = ({ show, onClose, showModal, children }) => {
+> = ({
+  show,
+  onClose,
+  showModal,
+  openAnimationClassName = "feedbacky-modal-in",
+  closeAnimationClassName = "feedbacky-modal-out",
+  transitionClassName = "transition-all",
+  children,
+}) => {
   const [closing, setClosing] = useState(false);
   const preventClose = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
@@ -37,9 +45,9 @@ const FeedbackModalContainer: FC<
     >
       <div
         onClick={preventClose}
-        className={classNames("transition-all", {
-          "feedbacky-modal-in": !closing,
-          "feedbacky-modal-out": closing,
+        className={classNames(`${transitionClassName}`, {
+          [`${openAnimationClassName}`]: !closing,
+          [`${closeAnimationClassName}`]: closing,
         })}
       >
         <FeedbackModalContainerProvider

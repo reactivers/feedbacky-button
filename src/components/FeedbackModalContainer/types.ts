@@ -8,6 +8,9 @@ interface IFeedbackModalContainerContextProps
   extends IFeedbackModalContainerContext {}
 
 interface IFeedbackModalContainerProps {
+  openAnimationClassName?: string;
+  closeAnimationClassName?: string;
+  transitionClassName?: string;
   show: boolean;
   onClose: () => void;
   showModal: () => void;

@@ -28,6 +28,7 @@ const FeedbackCore: FC<IFeedbackCore> = (props: IFeedbackCore) => {
         onClick={onFeedbackButtonClick}
       />
       <FeedbackModalContainer
+        {...props.feedbackModalContainerProps}
         show={show}
         showModal={showModal}
         onClose={onFeedbackModalClose}
